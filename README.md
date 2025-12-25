@@ -6,7 +6,16 @@ Lancement local:
    python -m uvicorn backend.main:app --reload
  Frontend:
   streamlit run app.py
+  
 Lancement Docker:
+ backend:
+   docker build -f docker/Dockerfile.backend -t cv-extractor-backend .
+   docker run -p 8000:8000 cv-extractor-backend
+ frontend:
+   docker build -f docker/Dockerfile.frontend -t cv-extractor-frontend .
+   docker run -p 8501:8501 cv-extractor-frontend
+
+
 
 exemples d’API: 
  
